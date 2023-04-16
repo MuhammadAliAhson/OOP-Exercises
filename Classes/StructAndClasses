@@ -1,0 +1,89 @@
+#pragma once
+#include <iostream>
+using namespace std;
+
+struct partsType
+{
+	int partNum;
+	double price;
+	int quantitiesInStock;
+
+};
+
+void parttype_insert(partsType p[3])
+{
+	for (int i = 0; i < 3; i++)
+	{
+		cin >> p[i].partNum;
+		cin >> p[i].price;
+		cin >> p[i].quantitiesInStock;
+	}
+}
+struct book
+{
+	int bookNumber;
+	string title;
+	string author;
+	int availability;
+
+};
+
+
+
+
+
+void book_insert(book b[3])
+{
+
+	for (int i = 0; i < 3; i++)
+	{
+		cin >> b[i].bookNumber;
+		cin >> b[i].title;
+		cin >> b[i].author;
+		cin >> b[i].availability;
+
+	}
+
+}
+
+int available_books(book b[3])
+{
+	int count = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		if (b[i].availability == 1)
+		{
+			count++;
+		}
+	}
+
+	return count;
+}
+
+
+
+//////////////////////////////////
+
+
+class sale {
+private:
+	double itemCost;
+	double taxRate;
+public:
+	void set_itemCost(int x) {
+		itemCost = x;
+	}
+	void set_taxRate(int x) {
+		taxRate = x;
+	}
+
+	int getTax() {
+
+		return (taxRate * itemCost);
+	}
+	int getTotal() {
+		return   ((getTax() + itemCost));
+
+
+	}
+};
